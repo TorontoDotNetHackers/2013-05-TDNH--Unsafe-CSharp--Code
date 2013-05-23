@@ -1,6 +1,8 @@
 ﻿Unsafe Code in C# - May 2013 TDNH Session
 =====================
 
+___Session Summary___
+
 __Stage 1__
 
 * Scanned MSDN docs about Unsafe Code in C#
