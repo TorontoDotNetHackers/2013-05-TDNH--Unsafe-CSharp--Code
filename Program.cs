@@ -21,6 +21,7 @@ namespace UnsafeSamples {
             for (int i = 0; i < 10000; ++i) // repeat it 10k times. 
                 sb.Append("This is a test.");
             string text = sb.ToString();
+            Console.WriteLine("Made string of {0:###,###,##0} characters for testing.", text.Length);
             GC.Collect();
 
             /* ---------------------- 
@@ -33,7 +34,7 @@ namespace UnsafeSamples {
             string s1 = new string(text.Reverse().ToArray());
 
             stopWatch.Stop();
-            Console.WriteLine("Managed string reversed in {0,10:#,###,##0} ticks", stopWatch.ElapsedTicks, text);
+            Console.WriteLine("\nManaged string reversed in {0,10:#,###,##0} ticks", stopWatch.ElapsedTicks, text);
             stopWatch = null;
             GC.Collect();
 
@@ -63,7 +64,7 @@ namespace UnsafeSamples {
             Console.WriteLine("Same immutable string (untouched by C# source): \"{0}\" << OOPS!", DontTouchThisString);
 
             // pause
-            Console.WriteLine("Hit Enter to exit... ");
+            Console.WriteLine("\nHit Enter to exit... ");
             Console.ReadLine();
         }
 
